@@ -311,7 +311,7 @@ class DocThread(SaveThread):
         self._execute("SELECT MAX(action_id) FROM page_order")
         row = self._fetchone()
         if row is not None:
-            self._action_id = cast("int", row[0])
+            self._action_id = cast("int", row[0]) or 0
 
     def _migrate_page_order_schema(self) -> None:
         """Detect and rebuild a legacy page_order schema with a page_number column."""

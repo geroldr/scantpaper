@@ -843,7 +843,7 @@ class Scan(PageControls):
         self, widget: Gtk.Switch, value: object, opt: Option
     ) -> None:
         if _value_for_active_option(value, opt):
-            widget.set_active(is_active=value)
+            widget.set_active(value)
 
     def _set_spinbutton_widget(
         self, widget: Gtk.SpinButton, value: object, opt: Option
@@ -1463,7 +1463,7 @@ class Scan(PageControls):
         self, widget: Gtk.CheckButton | Gtk.Switch, val: object
     ) -> None:
         if widget.get_active() != val:
-            widget.set_active(is_active=val)
+            widget.set_active(val)
 
     def _set_spinbutton_value(self, widget: Gtk.SpinButton, val: object) -> None:
         if widget.get_value() != val:
